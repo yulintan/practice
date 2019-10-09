@@ -10,6 +10,8 @@ testList = [[1, 2, 3],
 r = len(testList)
 c = len(testList[0])
 
+result = []
+
 
 def sum(array, m, n, path):
     # when it's on the last column, it can only go down
@@ -17,6 +19,7 @@ def sum(array, m, n, path):
         for e in array[m:]:
             path.append(e[n])
 
+        result.append(path)
         print(path)
         return
 
@@ -25,6 +28,7 @@ def sum(array, m, n, path):
         for e in array[m][n:]:
             path.append(e)
 
+        result.append(path)
         print(path)
         return
 
@@ -35,3 +39,5 @@ def sum(array, m, n, path):
 
 
 sum(testList, 0, 0, [])
+
+print(result)
